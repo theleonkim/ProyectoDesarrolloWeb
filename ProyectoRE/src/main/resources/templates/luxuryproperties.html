@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Propiedades de lujo en Costa Rica.">
+    <title>Propiedades de Lujo - Paradise Luxury Homes</title>
+    <link rel="stylesheet" href="hoja estilos web.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+		<a href="home.html"><img src="logo.png" alt="Paradise Luxury Homes Logo" class="logo"></a>
+      
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="luxury-properties.html">Propiedades de Lujo</a></li>
+                <li><a href="compare.html">Comparar Propiedades</a></li>
+                <li><a href="map.html">Mapa Interactivo</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+                <li><a href="favorites.html">Favoritos</a></li>
+            </ul>
+        </nav>
+		<div class="language-selector">
+                <a href="luxury-properties.html" lang="es">ES</a> | <a href="luxury-properties-en.html" lang="en">EN</a> <!-- Opciones de idioma -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Filtro de propiedades de lujo -->
+    <section class="filter-section">
+        <h2>Buscar Propiedades de Lujo</h2>
+        <form>
+            <label for="location">Ubicación:</label>
+            <select id="location">
+                <option value="beach">Frente al mar</option>
+                <option value="mountain">Montaña</option>
+            </select>
+            <label for="type">Tipo:</label>
+            <select id="type">
+                <option value="house">Casa</option>
+                <option value="villa">Villa</option>
+            </select>
+            <button type="submit" class="btn">Buscar</button>
+        </form>
+    </section>
+
+    <!-- Listado de propiedades -->
+    <section class="property-list">
+        <div class="property">
+            <img src="Propiedad1.jpeg" alt="Casa de lujo 1">
+            <h3>Casa de Lujo en Tamarindo</h3>
+            <p>Vista al mar, 3 habitaciones</p>
+            <a href="detalles-propiedad1.html">Ver Detalles</a>
+        </div>
+        <div class="property">
+            <img src="propiedad5.jpg" alt="Casa de lujo 2">
+            <h3>Villa en Manuel Antonio</h3>
+            <p>5 habitaciones, jardín tropical</p>
+            <a href="detalles-propiedad2.html">Ver Detalles</a>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Paradise Luxury Homes - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
