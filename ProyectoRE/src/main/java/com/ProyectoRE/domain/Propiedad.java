@@ -1,13 +1,9 @@
 
 package com.ProyectoRE.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import lombok.Data;
 
 
@@ -40,6 +36,10 @@ public class Propiedad implements Serializable {
     private String urlImgInterior1;
     private String urlImgInterior2;
     private boolean estado;
+    
+    @OneToMany
+    @JoinColumn(name = "id_propiedad", insertable = false, updatable = false)
+    List<Usuario> usuario;
 
     public Propiedad() {
     }

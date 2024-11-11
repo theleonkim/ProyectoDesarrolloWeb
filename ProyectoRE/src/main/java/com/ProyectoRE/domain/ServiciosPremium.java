@@ -4,6 +4,7 @@ package com.ProyectoRE.domain;
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import lombok.Data;
 
 
@@ -21,6 +22,10 @@ public class ServiciosPremium implements Serializable {
     private int idServicioPremium;
     private String servicioPremium;
     private boolean estado;
+    
+    @OneToMany
+    @JoinColumn(name = "id_servicio_premium", insertable = false, updatable = false)
+    List<Usuario> usuario;
 
     public ServiciosPremium() {
     }
