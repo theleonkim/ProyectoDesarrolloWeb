@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.ProyectoRE.service.impl;
 
 import com.ProyectoRE.dao.ResenasDao;
@@ -8,27 +12,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ *
+ * @author Priscilla Rodríguez
+ */
 @Service
 public class ResenaServiceImpl implements ResenaService {
-    
     @Autowired
-    private ResenasDao resenasDao;
+    private ResenasDao resenaDao;
     
     @Override
-    @Transactional(readOnly = true)
-    public List<Resenas> getResenas(boolean estado) {
-        return resenasDao.findByEstado(estado);
+    public List<Resenas> getResenas(){
+        List<Resenas> lista = resenaDao.findAll();
+        return lista;
     }
-
-    @Override
-    @Transactional(readOnly = true)
-    public Resenas getResena(Resenas resena) {
-        return resenasDao.findById(resena.getIdResena()).orElse(null);
-    }
-
+    
     @Override
     @Transactional
-    public void save(Resenas resena) {
-        resenasDao.save(resena);
+    public void save(Resenas resena){
+        resenaDao.save(resena);
     }
 }

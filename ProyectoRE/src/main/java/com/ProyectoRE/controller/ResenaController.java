@@ -20,7 +20,7 @@ public class ResenaController {
     // Muestra las reseñas agregadas
     @GetMapping("/listado")
     public String listadoResenas(Model model) {
-        var resenas = resenaService.getResenas(false);
+        var resenas = resenaService.getResenas();
         model.addAttribute("resenas", resenas);
         model.addAttribute("totalResenas", resenas.size());
         return "/resenas/listado"; 
