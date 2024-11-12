@@ -4,6 +4,7 @@ package com.ProyectoRE.domain;
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import lombok.Data;
 
 
@@ -20,6 +21,11 @@ public class TipoPropiedad implements Serializable {
     private int idTipoPropiedad;
     private String tipoPropiedad;
     private boolean estado;
+    
+    @OneToMany
+    @JoinColumn(name = "id_tipo_propiedad", insertable = false, updatable = false)
+    List<Usuario> usuario;
+    
 
     public TipoPropiedad() {
     }
