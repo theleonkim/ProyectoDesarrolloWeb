@@ -5,6 +5,6 @@ import com.ProyectoRE.domain.Cita;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface CitaDao extends JpaRepository<Cita, Long> {
+public interface CitaDao extends JpaRepository<Cita, Integer> {
     
 }

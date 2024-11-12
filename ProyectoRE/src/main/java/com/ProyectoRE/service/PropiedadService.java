@@ -10,6 +10,7 @@ public interface PropiedadService {
    // Se obtiene una propiedad, a partir del id de una propiead
     public Propiedad getPropiedad(Propiedad propieadad);
     
+    //Guarda la propiedad
     public void save(Propiedad propiedad);
     
 }

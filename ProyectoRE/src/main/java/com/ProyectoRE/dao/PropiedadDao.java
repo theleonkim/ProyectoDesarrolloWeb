@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 
-public interface PropiedadDao extends JpaRepository<Propiedad, Long> {
+public interface PropiedadDao extends JpaRepository<Propiedad, Integer> {
     
 }
