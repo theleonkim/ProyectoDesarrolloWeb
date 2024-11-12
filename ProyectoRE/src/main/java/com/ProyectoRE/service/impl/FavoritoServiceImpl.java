@@ -25,6 +25,8 @@ public class FavoritoServiceImpl implements FavoritoService {
         favoritoDao.delete(favorito);
     }
 
-    
+    @Override
+    public List<Favorito> findAllByUsuario(Usuario usuario) {
+        return favoritoDao.findByUsuario(usuario);
     }
 }
