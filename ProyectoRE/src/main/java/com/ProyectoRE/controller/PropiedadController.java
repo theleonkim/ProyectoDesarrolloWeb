@@ -21,6 +21,12 @@ public class PropiedadController {
         propiedadService.save(propiedad);
         return "redirect:/propiedad/listado";
     }
+    
+    @PostMapping("/guardar")
+    public String guardarPropiedad(Propiedad propiedad) {
+        propiedadService.save(propiedad);
+        return "redirect:/propiedad/listado";
+    }
 
     @GetMapping("/listado")
     public String inicio(Model model) {
