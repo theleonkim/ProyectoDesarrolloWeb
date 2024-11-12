@@ -19,8 +19,6 @@ public class Propiedad implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name="id_propiedad")
     private int idPropiedad;
-    private int idTipoPropiedad;
-    private int idServicioPremium;
     private String nombre;
     private String descripcion;
     private int numHabitaciones;
@@ -39,14 +37,25 @@ public class Propiedad implements Serializable {
     
     @OneToMany
     @JoinColumn(name = "id_propiedad", insertable = false, updatable = false)
-    List<Usuario> usuario;
+    List<Cita> cita;
+    
+    @OneToMany
+    @JoinColumn(name = "id_propiedad", insertable = false, updatable = false)
+    List<Favorito> favorito;
+    
+    @ManyToOne
+   @JoinColumn(name = "id_tipo_propiedad")
+   private TipoPropiedad tipo_propiedad;
 
+   @ManyToOne
+   @JoinColumn(name = "id_servicio_premium")
+   private ServiciosPremium servicios_premium;
+
+   
     public Propiedad() {
     }
 
-    public Propiedad(int idTipoPropiedad, int idServicioPremium, String nombre, String descripcion, int numHabitaciones, int numBanos, int numAreasSociables, float precio, int mtsLote, int mtsConstruccion, boolean ameneties, String urlUbicacion, String urlImgExterior1, String urlImgExterior2, String urlImgInterior1, String urlImgInterior2, boolean estado) {
-        this.idTipoPropiedad = idTipoPropiedad;
-        this.idServicioPremium = idServicioPremium;
+    public Propiedad(String nombre, String descripcion, int numHabitaciones, int numBanos, int numAreasSociables, float precio, int mtsLote, int mtsConstruccion, boolean ameneties, String urlUbicacion, String urlImgExterior1, String urlImgExterior2, String urlImgInterior1, String urlImgInterior2, boolean estado, TipoPropiedad tipo_propiedad, ServiciosPremium servicios_premium) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.numHabitaciones = numHabitaciones;
@@ -62,7 +71,9 @@ public class Propiedad implements Serializable {
         this.urlImgInterior1 = urlImgInterior1;
         this.urlImgInterior2 = urlImgInterior2;
         this.estado = estado;
+        this.tipo_propiedad = tipo_propiedad;
+        this.servicios_premium = servicios_premium;
     }
-    
+   
     
 }

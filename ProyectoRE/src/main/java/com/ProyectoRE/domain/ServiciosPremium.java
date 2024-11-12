@@ -26,6 +26,10 @@ public class ServiciosPremium implements Serializable {
     @OneToMany
     @JoinColumn(name = "id_servicio_premium", insertable = false, updatable = false)
     List<Usuario> usuario;
+    
+    @OneToMany
+    @JoinColumn(name = "id_servicio_premium", insertable = false, updatable = false)
+    List<Propiedad> propiedad;
 
     public ServiciosPremium() {
     }
