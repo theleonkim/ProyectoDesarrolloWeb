@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Comparar propiedades de lujo en Costa Rica.">
+        <title>Comparar Propiedades - Paradise Luxury Homes</title>
+        <link rel="stylesheet" href="hoja estilos web.css">
+
+    </head>
+    <body>
+        <!-- Encabezado -->
+        <header>
+            <a href="home.html"><img src="https://i.imgur.com/yTGzq23.png" alt="Paradise Luxury Homes Logo" class="logo"></a>
+            <nav>
+                <ul>
+                    <li><a th:href="@{/index.html}">Inicio</a></li>
+                    <li><a th:href="@{/luxury-properties.html}">Propiedades de Lujo</a></li>
+                    <li><a th:href="@{/compare.html}">Comparar Propiedades</a></li>
+                    <li><a th:href="@{/map.html}">Mapa Interactivo</a></li>
+                    <li><a th:href="@{/reviews.html}">Reseñas</a></li> <!-- Nuevo enlace añadido -->
+                    <li><a th:href="@{/contact.html}">Contacto</a></li>
+                    <li><a th:href="@{/favorites.html}">Favoritos</a></li>
+                </ul>
+            </nav>
+            <div class="language-selector">
+                <a href="compare.html" lang="es">ES</a> | <a href="compare-en.html" lang="en">EN</a> <!-- Opciones de idioma -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Comparar Propiedades -->
+    <section class="compare-section">
+        <h2>Comparar Propiedades</h2>
+        <table class="property-table">
+            <thead>
+                <tr>
+                    <th>Propiedad</th>
+                    <th>Precio</th>
+                    <th>Habitaciones</th>
+                    <th>Ubicación</th>
+                    <th>Ver más</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Casa de Lujo en Tamarindo</td>
+                    <td>$1,200,000</td>
+                    <td>3</td>
+                    <td>Frente al mar</td>
+                    <td><a href="detalles-propiedad1.html" class="details-link">Ver Detalles</a></td>
+                </tr>
+                <tr>
+                    <td>Villa en Manuel Antonio</td>
+                    <td>$2,500,000</td>
+                    <td>5</td>
+                    <td>Montaña</td>
+                    <td><a href="detalles-propiedad2.html" class="details-link">Ver Detalles</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Paradise Luxury Homes - Todos los derechos reservados</p>
+    </footer>

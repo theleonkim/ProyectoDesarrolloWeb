@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hoja estilos web.css">
+    <title>Interactive Map</title>
+</head>
+<body>
+    <header>
+        <a href="home-en.html"><img src="logo.png" alt="Paradise Luxury Homes Logo" class="logo"></a>
+        <nav>
+            <ul>
+                <li><a th:href="@{/index-en.html}">Home</a></li>
+                <li><a th:href="@{/luxuryproperties-en.html}">Luxury Properties</a></li>
+                <li><a th:href="@{/compare-en.html}">Compare Properties</a></li>
+                <li><a th:href="@{/map-en.html}">Interactive Map</a></li>
+                <li><a th:href="@{/reviews.html}">Reviews</a></li> <!-- Nuevo enlace añadido -->
+                <li><a th:href="@{/contact-en.html}">Contact</a></li>
+                <li><a th:href="@{/favorites-en.html}">Favorites</a></li>
+                <li class="language-selector"><a href="map.html">ES</a> | <a href="map-en.html">EN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="map-section">
+        <h2>Interactive Map</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150326.8997874894!2d-86.328125!3d9.748917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0fb730a45db61%3A0x52944fe9b5781f44!2sCosta%20Rica!5e0!3m2!1sen!2sus!4v1697826707890!5m2!1sen!2sus" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Paradise Luxury Homes - All rights reserved</p>
+    </footer>
+</body>
+</html>
