@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hoja estilos web.css">
+    <title>Luxury Properties</title>
+</head>
+<body>
+    <header>
+        <a href="home-en.html"><img src="logo.png" alt="Paradise Luxury Homes Logo" class="logo"></a>
+        <nav>
+            <ul>
+                <li><a th:href="@{/index-en.html}">Home</a></li>
+                <li><a th:href="@{/luxuryproperties-en.html}">Luxury Properties</a></li>
+                <li><a th:href="@{/compare-en.html}">Compare Properties</a></li>
+                <li><a th:href="@{/map-en.html}">Interactive Map</a></li>
+                <li><a th:href="@{/reviews.html}">Reviews</a></li> <!-- Nuevo enlace añadido -->
+                <li><a th:href="@{/contact-en.html}">Contact</a></li>
+                <li><a th:href="@{/favorites-en.html}">Favorites</a></li>
+                <li class="language-selector"><a href="luxury-properties.html">ES</a> | <a href="luxury-properties-en.html">EN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="filter-section">
+        <h2>Search Luxury Properties</h2>
+        <form action="#">
+            <label for="location">Location:</label>
+            <select id="location">
+                <option value="oceanfront">Oceanfront</option>
+                <option value="mountain">Mountain</option>
+            </select>
+            <label for="type">Type:</label>
+            <select id="type">
+                <option value="house">House</option>
+                <option value="villa">Villa</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="property-list">
+        <div class="property">
+            <img src="Propiedad1.jpeg" alt="Luxury Property 1">
+            <h3>Luxury House in Tamarindo</h3>
+            <p>Ocean view, 3 bedrooms, and all amenities of a luxury property by the beach.</p>
+            <a href="#" class="details-link">View Details</a>
+        </div>
+        <div class="property">
+            <img src="propiedad5.jpg" alt="Luxury Property 2">
+            <h3>Villa in Manuel Antonio</h3>
+            <p>5 bedrooms, tropical garden, and stunning views.</p>
+            <a href="#" class="details-link">View Details</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Paradise Luxury Homes - All rights reserved</p>
+    </footer>

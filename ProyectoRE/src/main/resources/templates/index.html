@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
@@ -23,13 +18,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </a>
                 <nav>
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="luxuryproperties.html">Propiedades de Lujo</a></li>
-                        <li><a href="compare.html">Comparar Propiedades</a></li>
-                        <li><a href="map.html">Mapa Interactivo</a></li>
-                        <li><a href="reviews.html">Reseñas</a></li> 
-                        <li><a href="contact.html">Contacto</a></li>
-                        <li><a href="favorites.html">Favoritos</a></li>
+                     
+                        <li><a th:href="@{/index.html}">Inicio</a></li>
+                        <li><a th:href="@{/luxuryproperties.html}">Propiedades de Lujo</a></li>
+                        <li><a th:href="@{/compare.html}">Comparar Propiedades</a></li>
+                        <li><a th:href="@{/map.html}">Mapa Interactivo</a></li>
+                        <li><a th:href="@{/reviews.html}">Reseñas</a></li> <!-- Nuevo enlace añadido -->
+                        <li><a th:href="@{/contact.html}">Contacto</a></li>
+                        <li><a th:href="@{/favorites.html}">Favoritos</a></li>
                     </ul>
                 </nav>
 

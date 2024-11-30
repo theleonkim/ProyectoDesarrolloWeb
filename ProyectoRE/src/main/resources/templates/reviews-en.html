@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Client reviews about Paradise Luxury Homes, showcasing luxury properties in Costa Rica.">
+    <title>Reviews - Paradise Luxury Homes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html">
+                <img src="https://i.imgur.com/yTGzq23.png" alt="Paradise Luxury Homes Logo" class="logo">
+            </a>
+            <ul>
+                <li><a th:href="@{/index-en.html}">Home</a></li>
+                <li><a th:href="@{/luxuryproperties-en.html}">Luxury Properties</a></li>
+                <li><a th:href="@{/compare-en.html}">Compare Properties</a></li>
+                <li><a th:href="@{/map-en.html}">Interactive Map</a></li>
+                <li><a th:href="@{/reviews.html}">Reviews</a></li> <!-- Nuevo enlace añadido -->
+                <li><a th:href="@{/contact-en.html}">Contact</a></li>
+                <li><a th:href="@{/favorites-en.html}">Favorites</a></li>
+                <li class="language-selector"><a href="reviews.html">ES</a> | <a href="reviews-en.html">EN</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content for Reviews -->
+    <main>
+        <section class="reviews-section">
+            <div class="container">
+                <h1>Our Clients' Reviews</h1>
+                <p>Discover what our clients say about their experience with Paradise Luxury Homes.</p>
+                
+                <!-- Review 1 -->
+                <div class="review">
+                    <h2>Juan Pérez</h2>
+                    <p class="review-date">October 2024</p>
+                    <p>"The best buying experience. Paradise Luxury Homes made finding my dream home in Costa Rica easy and stress-free. Highly recommended!"</p>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="review">
+                    <h2>Maria Gonzalez</h2>
+                    <p class="review-date">September 2024</p>
+                    <p>"Excellent customer service. They guided me every step of the way and were always ready to answer my questions. Incredible team!"</p>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="review">
+                    <h2>Carlos Rodriguez</h2>
+                    <p class="review-date">August 2024</p>
+                    <p>"The Paradise Luxury Homes team exceeded my expectations. Professionalism and in-depth knowledge of the luxury real estate market in Costa Rica."</p>
+                </div>
+                
+                <!-- More reviews can be added here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Paradise Luxury Homes - All rights reserved</p>
+    </footer>
+</body>
+</html>
+

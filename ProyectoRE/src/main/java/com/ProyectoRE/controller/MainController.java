@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.ProyectoRE.controller;
 
 import org.springframework.stereotype.Controller;
@@ -10,12 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 
-    @GetMapping("/")
-    public String home() {
+    @GetMapping("/index")
+    public String index() {
         return "index"; // Redirige a index.html
     }
 
-    @GetMapping("/luxury-properties")
+    @GetMapping("/luxuryproperties")
+
     public String luxuryProperties() {
         return "luxuryproperties"; // Redirige a luxuryproperties.html
     }
@@ -43,4 +40,6 @@ public class MainController {
     @GetMapping("/reviews")
     public String reviews() {
         return "reviews"; // Redirige a reviews.html
-         } }
+
+    }
+}
