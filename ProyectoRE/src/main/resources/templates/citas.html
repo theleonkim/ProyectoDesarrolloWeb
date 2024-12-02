@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Listado de Citas</title>
+</head>
+<body>
+    <h1>Listado de Citas</h1>
+    <p>Total de citas: <span th:text="${totalCitas}"></span></p>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="cita : ${citas}">
+                <td th:text="${cita.id}"></td>
+                <td th:text="${cita.cliente}"></td>
+                <td th:text="${cita.fecha}"></td>
+                <td>
+                    <a th:href="@{/cita/eliminar/{idCita}(idCita=${cita.id})}">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/cita/formulario">Agregar nueva cita</a>
+</body>
+</html>
+

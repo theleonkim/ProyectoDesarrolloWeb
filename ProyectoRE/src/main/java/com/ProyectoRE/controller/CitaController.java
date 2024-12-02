@@ -12,34 +12,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/cita")
 public class CitaController {
-    
+
     @Autowired
     private CitaService citaService;
-    
-    @PostMapping("/agregar")
-    public String agregarCita(Cita cita) {
-        citaService.save(cita);
-        return "redirect:/usuario/listado";
+
+    @GetMapping("/formulario")
+    public String mostrarFormularioCitas() {
+        return "citas-form"; // Renderiza citas-form.html
     }
-    
-    @GetMapping("/listado")
-    public String listadoCita(Model model) {
-        var citas = citaService.getCitas();
-        model.addAttribute("citas", citas);
-        model.addAttribute("totalCitas", citas.size());
-        return "/cita/listado"; 
-    }
-    
+
     @PostMapping("/guardar")
     public String guardarCita(Cita cita) {
         citaService.save(cita);
-        return "redirect:/citas/listado";  
+        return "redirect:/cita/listado";
     }
-    
+
+    @GetMapping("/listado")
+    public String listadoCitas(Model model) {
+        var citas = citaService.getCitas();
+        model.addAttribute("citas", citas);
+        model.addAttribute("totalCitas", citas.size());
+        return "citas"; // Renderiza citas.html
+    }
+
     @GetMapping("/eliminar/{idCita}")
-    public String EliminarCita(Cita cita) {
+    public String eliminarCita(Cita cita) {
         citaService.delete(cita);
-        return"redirect:/cita/listado";
+        return "redirect:/cita/listado";
     }
- 
 }
+
+
