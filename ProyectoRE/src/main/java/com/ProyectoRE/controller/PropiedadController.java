@@ -5,9 +5,7 @@ import com.ProyectoRE.service.PropiedadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/propiedad")
@@ -15,32 +13,42 @@ public class PropiedadController {
 
     @Autowired
     private PropiedadService propiedadService;
-    
+
+    // Agregar una nueva propiedad
     @PostMapping("/agregar")
-    public String agregarPropiedad(Propiedad propiedad) {
-        propiedadService.save(propiedad);
-        return "redirect:/propiedad/listado";
+    public String agregarPropiedad(@ModelAttribute Propiedad propiedad) {
+        propiedadService.save(propiedad); // Guardar la propiedad
+        return "redirect:/propiedad/listado"; // Redirigir al listado
     }
-    
+
+    // Guardar una propiedad existente o nueva
     @PostMapping("/guardar")
-    public String guardarPropiedad(Propiedad propiedad) {
-        propiedadService.save(propiedad);
-        return "redirect:/propiedad/listado";
+    public String guardarPropiedad(@ModelAttribute Propiedad propiedad) {
+        propiedadService.save(propiedad); // Guardar la propiedad
+        return "redirect:/propiedad/listado"; // Redirigir al listado
     }
 
+    // Mostrar listado de propiedades
     @GetMapping("/listado")
-    public String inicio(Model model) {
-        var propiedades = propiedadService.getPropiedades(false);
-        model.addAttribute("propiedades", propiedades);
-        model.addAttribute("totalPropiedades", propiedades.size());
-        return "/propiedad/listado";
+    public String listadoPropiedades(Model model) {
+        var propiedades = propiedadService.getPropiedades(true); // Obtener propiedades activas
+        model.addAttribute("propiedades", propiedades); // Agregar propiedades al modelo
+        model.addAttribute("totalPropiedades", propiedades.size()); // Agregar total de propiedades
+        return "propiedad/listado"; // Mostrar vista de listado
     }
 
+    // Detalle de una propiedad específica
     @GetMapping("/detalle/{id}")
-    public String detallePropiedad(Propiedad propiedad, Model model) {
-        propiedad = propiedadService.getPropiedad(propiedad);
-        model.addAttribute("propiedad", propiedad);
-        return "/propiedad/detalle";
+    public String detallePropiedad(@PathVariable("id") int id, Model model) {
+        var propiedad = propiedadService.getPropiedadById(id); // Obtener propiedad por ID
+        model.addAttribute("propiedad", propiedad); // Agregar propiedad al modelo
+        return "propiedad/detalle"; // Mostrar vista de detalle
+    }
+
+    // Mostrar formulario para crear o editar una propiedad
+    @GetMapping("/formulario")
+    public String mostrarFormularioPropiedad(Model model) {
+        model.addAttribute("propiedad", new Propiedad()); // Crear objeto vacío para formulario
+        return "propiedad/formulario"; // Mostrar vista del formulario
     }
 }
-

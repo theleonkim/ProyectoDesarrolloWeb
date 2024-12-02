@@ -1,19 +1,15 @@
-
 package com.ProyectoRE.service;
 
 import com.ProyectoRE.domain.Cita;
 import java.util.List;
 
-
 public interface CitaService {
-    
-    public List<Cita> getCitas();
-    
-    public Cita getCita(Cita cita);
-    
-    public void save(Cita cita);
-    
-    public void delete(Cita cita);
-   
-    
+
+    List<Cita> getCitas();
+
+    void save(Cita cita);
+
+    Cita findById(int id);
+
+    void delete(Cita cita);
 }

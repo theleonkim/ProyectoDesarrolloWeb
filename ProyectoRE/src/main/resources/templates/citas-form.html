@@ -4,6 +4,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
 
+
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Formulario de Citas</title>
@@ -11,15 +12,23 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 <body>
     <h1>Agendar una Cita</h1>
     <form action="/cita/guardar" method="post">
-        <label for="cliente">Nombre del Cliente:</label>
-        <input type="text" id="cliente" name="cliente" required>
-        <br>
         <label for="fecha">Fecha de la Cita:</label>
         <input type="datetime-local" id="fecha" name="fecha" required>
         <br>
-        <button type="submit">Guardar Cita</button>
+        <label for="usuario">Usuario:</label>
+        <select id="usuario" name="usuario.id" required>
+            <option th:each="usuario : ${usuarios}" th:value="${usuario.idUsuario}" th:text="${usuario.nombre}"></option>
+        </select>
+        <br>
+        <label for="propiedad">Propiedad:</label>
+        <select id="propiedad" name="propiedad.id" required>
+            <option th:each="propiedad : ${propiedades}" th:value="${propiedad.idPropiedad}" th:text="${propiedad.nombre}"></option>
+        </select>
+        <br>
+        <button type="submit">Guardar</button>
     </form>
     <a href="/cita/listado">Volver al listado</a>
 </body>
 </html>
+
 
