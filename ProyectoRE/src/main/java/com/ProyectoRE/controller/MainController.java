@@ -56,6 +56,16 @@ public class MainController {
     public String propertyDetails2() {
         return "detalles-propiedad2"; // Redirige a detalles-propiedad2.html
     }
+    
+    @GetMapping("/citas-form")
+    public String citasForm() {
+        return "citas-form"; // Redirige a citas-form.html
+    }
+    
+    @GetMapping("/citas-listado")
+    public String citasListado() {
+        return "citas-listado"; // Redirige a citas-listado.html
+    }
 
     // ================= Páginas en Inglés =================
     @GetMapping("/index-en")
