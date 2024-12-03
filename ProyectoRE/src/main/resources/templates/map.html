@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Ver propiedades en el mapa interactivo.">
+        <title>Mapa Interactivo - Paradise Luxury Homes</title>
+        <link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+    <body>
+        <!-- Encabezado -->
+        <header>
+            <div class="container">
+                <a href="index">
+                    <img src="/imagenes/logo.png" alt="Paradise Luxury Homes Logo" class="logo">
+                <nav>
+                    <ul>
+                        <li><a th:href="@{/index}">Inicio</a></li>
+                        <li><a th:href="@{/luxuryproperties}">Propiedades de Lujo</a></li>
+                        <li><a th:href="@{/compare}">Comparar Propiedades</a></li>
+                        <li><a th:href="@{/map}">Mapa Interactivo</a></li>
+                        <li><a th:href="@{/reviews}">Reseñas</a></li> <!-- Nuevo enlace añadido -->
+                        <li><a th:href="@{/contact}">Contacto</a></li>
+                        <li><a th:href="@{/favorites}">Favoritos</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="language-selector">
+                <a href="map.html" lang="es">ES</a> | <a href="map-en.html" lang="en">EN</a> <!-- Opciones de idioma -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Mapa Interactivo -->
+    <section class="map-section">
+        <h2>Mapa Interactivo de Propiedades</h2>
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150326.8997874894!2d-86.328125!3d9.748917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0fb730a45db61%3A0x52944fe9b5781f44!2sCosta%20Rica!5e0!3m2!1sen!2sus!4v1697826707890!5m2!1sen!2sus"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Paradise Luxury Homes - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>

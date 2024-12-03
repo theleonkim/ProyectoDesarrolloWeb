@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
+    <title>Compare Properties</title>
+</head>
+<body>
+    <header>
+        <a href="home-en"><img src="logo.png" alt="Paradise Luxury Homes Logo" class="logo"></a>
+        <nav>
+            <ul>
+                <li><a th:href="@{/index-en}">Home</a></li>
+                <li><a th:href="@{/luxuryproperties-en}">Luxury Properties</a></li>
+                <li><a th:href="@{/compare-en}">Compare Properties</a></li>
+                <li><a th:href="@{/map-en}">Interactive Map</a></li>
+                <li><a th:href="@{/reviews}">Reviews</a></li> <!-- Nuevo enlace añadido -->
+                <li><a th:href="@{/contact-en}">Contact</a></li>
+                <li><a th:href="@{/favorites-en}">Favorites</a></li>
+                <li class="language-selector"><a href="compare">ES</a> | <a href="compare-en">EN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="compare-section">
+        <h2>Compare Properties</h2>
+        <table class="property-table">
+            <thead>
+                <tr>
+                    <th>Property</th>
+                    <th>Price</th>
+                    <th>Bedrooms</th>
+                    <th>Location</th>
+                    <th>View More</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Luxury House in Tamarindo</td>
+                    <td>$1,200,000</td>
+                    <td>3</td>
+                    <td>Oceanfront</td>
+                    <td><a href="#" class="details-link">View Details</a></td>
+                </tr>
+                <tr>
+                    <td>Villa in Manuel Antonio</td>
+                    <td>$2,500,000</td>
+                    <td>5</td>
+                    <td>Mountain</td>
+                    <td><a href="#" class="details-link">View Details</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>© 2024 Paradise Luxury Homes - All rights reserved</p>
+    </footer>
+</body>
+</html>
+
