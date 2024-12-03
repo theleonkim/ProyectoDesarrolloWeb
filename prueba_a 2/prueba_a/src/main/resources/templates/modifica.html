@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>Modificar Cita</title>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h1>Modificar Cita</h1>
+            <form>
+                <div class="form-group">
+                    <label for="idCita">ID Cita</label>
+                    <input type="text" class="form-control" id="idCita" placeholder="Ingrese ID de la cita" required readonly>
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="asistentes">Asistentes</label>
+                    <input type="number" class="form-control" id="asistentes" placeholder="Número de asistentes" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaCita">Fecha de Cita</label>
+                    <input type="date" class="form-control" id="fechaCita" required>
+                </div>
+                <div class="form-group">
+                    <label for="imagen">URL de la Imagen</label>
+                    <input type="text" class="form-control" id="imagen" placeholder="Ingrese la URL de la imagen" required>
+                    <small class="form-text text-muted">Asegúrese de que la URL sea accesible.</small>
+                </div>
+                <button type="submit" class="btn btn-success">Modificar Cita</button>
+            </form>
+        </div>
+    </body>
+</html>
+

@@ -33,7 +33,7 @@ public class CitaController {
         model.addAttribute("usuarios", usuarios);
         model.addAttribute("propiedades", propiedades);
         model.addAttribute("cita", new Cita()); // Crear un objeto vacío para el formulario
-        return "cita/formulario";
+        return "citas-form";
     }
 
     @PostMapping("/guardar")
