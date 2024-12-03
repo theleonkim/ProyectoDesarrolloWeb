@@ -8,7 +8,8 @@
 </head>
 <body>
     <header>
-        <a href="home-en"><img src="logo.png" alt="Paradise Luxury Homes Logo" class="logo"></a>
+        <a href="index">
+                    <img src="/imagenes/logo.png" alt="Paradise Luxury Homes Logo" class="logo">
         <nav>
             <ul>
                 <li><a th:href="@{/index-en}">Home</a></li>
@@ -23,36 +24,37 @@
         </nav>
     </header>
 
-    <div class="compare-section">
-        <h2>Compare Properties</h2>
+    <!-- Comparar Propiedades -->
+    <section class="compare-section">
+        <h2>Comparar Propiedades</h2>
         <table class="property-table">
             <thead>
                 <tr>
                     <th>Property</th>
                     <th>Price</th>
-                    <th>Bedrooms</th>
+                    <th>Bedroom</th>
                     <th>Location</th>
-                    <th>View More</th>
+                    <th>More</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Luxury House in Tamarindo</td>
+                    <td>Tamarindo Luxury Hoome</td>
                     <td>$1,200,000</td>
                     <td>3</td>
-                    <td>Oceanfront</td>
-                    <td><a href="#" class="details-link">View Details</a></td>
+                    <td>Beachfront</td>
+                    <td><a href="detalles-propiedad1" class="details-link">View details</a></td>
                 </tr>
                 <tr>
-                    <td>Villa in Manuel Antonio</td>
+                    <td>Manuel Antonio Villa</td>
                     <td>$2,500,000</td>
                     <td>5</td>
                     <td>Mountain</td>
-                    <td><a href="#" class="details-link">View Details</a></td>
+                    <td><a href="detalles-propiedad2" class="details-link">View details</a></td>
                 </tr>
             </tbody>
         </table>
-    </div>
+    </section>
 
     <footer>
         <p>© 2024 Paradise Luxury Homes - All rights reserved</p>
