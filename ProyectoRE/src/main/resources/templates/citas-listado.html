@@ -1,33 +1,182 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de Citas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Texto blanco */
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #000; /* Negro */
+            color: #d4af37; /* Dorado */
+        }
+
+        header .logo {
+            max-height: 50px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        header nav ul li {
+            display: inline-block;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #d4af37; /* Dorado */
+            font-weight: bold;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #111; /* Fondo ligeramente más claro que el negro */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(212, 175, 55, 0.3); /* Sombra dorada */
+            padding: 20px;
+            color: #fff; /* Texto blanco */
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37; /* Dorado */
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th,
+        table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #d4af37; /* Bordes dorados */
+        }
+
+        table th {
+            background-color: #222; /* Fondo de encabezado oscuro */
+            color: #d4af37; /* Texto dorado */
+            font-weight: bold;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background-color: #111; /* Filas alternas más claras */
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #000; /* Fondo negro */
+        }
+
+        table tbody tr:hover {
+            background-color: #333; /* Fondo gris oscuro al pasar el mouse */
+        }
+
+        a {
+            color: #d4af37; /* Links dorados */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #d4af37; /* Botón dorado */
+            color: #000; /* Texto negro */
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #b89128; /* Dorado más oscuro al pasar el mouse */
+        }
+
+        footer {
+            background-color: #000; /* Negro */
+            color: #d4af37; /* Dorado */
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Listado de Citas</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Fecha</th>
-                <th>Usuario</th>
-                <th>Propiedad</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="cita : ${citas}">
-                <td th:text="${cita.idCita}"></td>
-                <td th:text="${#dates.format(cita.fecha, 'yyyy-MM-dd HH:mm')}"></td>
-                <td th:text="${cita.usuario.nombre}"></td>
-                <td th:text="${cita.propiedad.nombre}"></td>
-                <td>
-                    <a th:href="@{/cita/eliminar/{id}(id=${cita.idCita})}">Eliminar</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <a href="/cita/formulario">Agregar nueva cita</a>
+    <header>
+        <a href="index">
+            <img src="/imagenes/logo.png" alt="Paradise Luxury Homes Logo" class="logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a th:href="@{/index}">Inicio</a></li>
+                <li><a th:href="@{/luxuryproperties}">Propiedades de Lujo</a></li>
+                <li><a th:href="@{/compare}">Comparar</a></li>
+                <li><a th:href="@{/contact}">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Listado de Citas</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha</th>
+                    <th>Usuario</th>
+                    <th>Propiedad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="cita : ${citas}">
+                    <td th:text="${cita.idCita}"></td>
+                    <td th:text="${#dates.format(cita.fecha, 'yyyy-MM-dd HH:mm')}"></td>
+                    <td th:text="${cita.usuario.nombre}"></td>
+                    <td th:text="${cita.propiedad.nombre}"></td>
+                    <td>
+                        <a th:href="@{/cita/eliminar/{id}(id=${cita.idCita})}">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="/citas-form" class="btn">Agregar nueva cita</a>
+    </div>
+
+    <footer>
+        <p>© 2024 Paradise Luxury Homes - Todos los derechos reservados</p>
+    </footer>
 </body>
 </html>
-
