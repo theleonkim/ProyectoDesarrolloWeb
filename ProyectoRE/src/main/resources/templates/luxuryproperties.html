@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +20,7 @@
             <nav>
                 <ul>
                     <li><a th:href="@{/index}">Inicio</a></li>
-                    <li><a th:href="@{/luxuryproperties}">Propiedades de Lujo</a></li>
+                    <li><a th:href="@{/propiedad/luxuryproperties}">Propiedades de Lujo</a></li>
                     <li><a th:href="@{/compare}">Comparar Propiedades</a></li>
                     <li><a th:href="@{/map}">Mapa Interactivo</a></li>
                     <li><a th:href="@{/reviews}">Reseñas</a></li> <!-- Nuevo enlace añadido -->
@@ -51,18 +54,18 @@
 
     <!-- Listado de propiedades -->
     <section class="property-list">
-        <div class="property">
-            <img src="/imagenes/Casa de lujo 1.jpeg" alt="Casa de lujo 1">
-            <h3>Casa de Lujo en Tamarindo</h3>
-            <p>Vista al mar, 3 habitaciones</p>
+        <div th:each="propiedad : ${propiedades}" class="property">
+            <img th:src="@{${propiedad.urlImgExterior1}}" alt="Casa de lujo 1">
+            <h3>[[${propiedad.nombre}]]</h3>
+            <p>[[${propiedad.descripcion}]]</p>
             <a href="detalles-propiedad1">Ver Detalles</a>
         </div>
-        <div class="property">
+<!--        <div class="property">
             <img src="/imagenes/Casa de lujo 2.png" alt="Casa de lujo 2">
             <h3>Villa en Manuel Antonio</h3>
             <p>5 habitaciones, jardín tropical</p>
             <a href="detalles-propiedad2">Ver Detalles</a>
-        </div>
+        </div>-->
     </section>
 
     <!-- Pie de página -->

@@ -15,11 +15,6 @@ public class MainController {
         return "index"; // Redirige a index.html
     }
 
-    @GetMapping("/luxuryproperties")
-    public String luxuryProperties() {
-        return "luxuryproperties"; // Redirige a luxuryproperties.html
-    }
-
     @GetMapping("/compare")
     public String compareProperties() {
         return "compare"; // Redirige a compare.html

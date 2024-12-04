@@ -21,8 +21,11 @@ public class Propiedad implements Serializable {
     private int idPropiedad;
     private String nombre;
     private String descripcion;
+    @Column (name="n_habitaciones")
     private int numHabitaciones;
+    @Column (name="n_banos")
     private int numBanos;
+    @Column (name="n_areas_sociables")
     private int numAreasSociables;
     private float precio;
     private int mtsLote;
@@ -55,7 +58,7 @@ public class Propiedad implements Serializable {
     public Propiedad() {
     }
 
-    public Propiedad(String nombre, String descripcion, int numHabitaciones, int numBanos, int numAreasSociables, float precio, int mtsLote, int mtsConstruccion, boolean ameneties, String urlUbicacion, String urlImgExterior1, String urlImgExterior2, String urlImgInterior1, String urlImgInterior2, boolean estado, TipoPropiedad tipo_propiedad, ServiciosPremium servicios_premium) {
+    public Propiedad(String nombre, String descripcion, int numHabitaciones, int numBanos, int numAreasSociables, float precio, int mtsLote, int mtsConstruccion, boolean ameneties, String urlUbicacion, String urlImgExterior1, String urlImgExterior2, String urlImgInterior1, String urlImgInterior2, boolean estado, List<Cita> cita, List<Favorito> favorito, TipoPropiedad tipo_propiedad, ServiciosPremium servicios_premium) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.numHabitaciones = numHabitaciones;
@@ -71,9 +74,13 @@ public class Propiedad implements Serializable {
         this.urlImgInterior1 = urlImgInterior1;
         this.urlImgInterior2 = urlImgInterior2;
         this.estado = estado;
+        this.cita = cita;
+        this.favorito = favorito;
         this.tipo_propiedad = tipo_propiedad;
         this.servicios_premium = servicios_premium;
     }
+
+    
    
     
 }
