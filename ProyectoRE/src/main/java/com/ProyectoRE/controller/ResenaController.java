@@ -23,7 +23,7 @@ public class ResenaController {
         var resenas = resenaService.getResenas();
         model.addAttribute("resenas", resenas);
         model.addAttribute("totalResenas", resenas.size());
-        return "/resenas/listado"; 
+        return "reviews"; 
     }
 
     // Muestra el formulario para agregar una nueva reseña

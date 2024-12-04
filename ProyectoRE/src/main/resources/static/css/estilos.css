@@ -44,6 +44,71 @@ nav ul li a:hover {
     transition: color 0.3s ease;
 }
 
+.btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #d4af37;
+    color: #000; 
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #b89128;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #111; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(212, 175, 55, 0.5); 
+    padding: 30px;
+    color: #fff;
+}
+
+.form-container h1 {
+    text-align: center;
+    color: #d4af37;
+    margin-bottom: 30px;
+    font-size: 26px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #d4af37; /* Dorado */
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d4af37; /* Borde dorado */
+    border-radius: 5px;
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    font-size: 14px;
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group input::placeholder {
+    color: #ccc; /* Placeholder gris claro */
+}
+
 /* Sección del video */
 .video-section {
     position: relative;
@@ -267,7 +332,7 @@ nav ul li a:hover {
     color: #333;
 }
 
-.contact-section input, 
+.contact-section input,
 .contact-section textarea {
     width: 100%;
     padding: 10px;
@@ -361,6 +426,31 @@ nav ul li a:hover {
 .language-selector a:hover {
     background-color: #b3942e;
     transition: background-color 0.3s ease;
+}
+
+/* Estilos para las reseñas */
+.reviews-section {
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+.review{
+    margin-bottom: 40px;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+.stars {
+    display: flex;
+    gap: 5px;
+    font-size: 24px;
+    color: gold;
+}
+
+.stars .gray {
+    color: lightgray;
 }
 
 /* Pie de página */

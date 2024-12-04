@@ -24,6 +24,7 @@ public class Resenas implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name="id_resena")
     private int idResena;
+    @Column (name="n_estrellas")
     private int numEstrellas;
     private String comentario;
     
