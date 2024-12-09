@@ -8,6 +8,110 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
         <link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
+        <style>
+            /* Configuración global */
+            body {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: #f9f9f9;
+            }
+
+            header, footer {
+                width: 100%;
+                text-align: center;
+            }
+
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .reviews-section {
+                padding: 20px;
+                background: #fff;
+                margin-top: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                width: 100%;
+                max-width: 800px;
+                position: relative;
+            }
+
+            .reviews-section .btn {
+                display: block;
+                width: calc(100% - 40px); /* Ajusta el botón al ancho del contenedor */
+                max-width: 300px; /* Limita el ancho máximo del botón */
+                margin: 0 auto 20px; /* Centra el botón dentro del contenedor */
+                padding: 10px 20px;
+                background-color: #f6b93b;
+                color: white;
+                text-decoration: none;
+                font-size: 1em;
+                font-weight: bold;
+                border-radius: 5px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                transition: background 0.3s, transform 0.2s;
+            }
+
+            .reviews-section .btn:hover {
+                background-color: #fa983a;
+                transform: scale(1.05);
+                box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+            }
+
+            .reviews-section h1 {
+                font-size: 2em;
+                margin-bottom: 10px;
+                color: #333;
+            }
+
+            .reviews-section p {
+                font-size: 1em;
+                color: #666;
+                margin-bottom: 20px;
+            }
+
+            .review {
+                text-align: left;
+                background: #f9f9f9;
+                padding: 15px;
+                margin-bottom: 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .review h2 {
+                font-size: 1.5em;
+                margin-bottom: 5px;
+                color: #333;
+            }
+
+            .review p {
+                font-size: 1em;
+                color: #555;
+                margin: 10px 0 0 0;
+            }
+
+            .stars {
+                margin-top: 5px;
+                color: #f6b93b;
+            }
+
+            .stars i.gray {
+                color: #ccc;
+            }
+
+            footer p {
+                font-size: 0.9em;
+                color: #999;
+                margin-top: 20px;
+            }
+        </style>
     </head>
     <body>
         <!-- Encabezado -->
@@ -18,13 +122,15 @@
                 </a>
                 <nav>
                     <ul>
-                        <li><a href="index">Inicio</a></li>
-                        <li><a href="@{/propiedad/luxuryproperties}">Propiedades de Lujo</a></li>
-                        <li><a href="compare">Comparar Propiedades</a></li>
-                        <li><a href="@{/resenas/listado}">Reseñas</a></li>
-                        <li><a href="map">Mapa Interactivo</a></li>
-                        <li><a href="contact">Contacto</a></li>
-                        <li><a href="favorites">Favoritos</a></li>
+                        <li><a th:href="@{/index}">Inicio</a></li>
+                        <li><a th:href="@{/luxuryproperties}">Propiedades de Lujo</a></li>
+                        <li><a th:href="@{/compare}">Comparar Propiedades</a></li>
+                        <li><a th:href="@{/map}">Mapa Interactivo</a></li>
+                        <li><a th:href="@{/reviews}">Reseñas</a></li>
+                        <li><a th:href="@{/contact}">Contacto</a></li>
+                        <li><a th:href="@{/favorites}">Favoritos</a></li>
+                        <li><a th:href="@{/citas-form}">Citas</a></li>
+                        <li><a href="#" id="login-link">Login</a></li>
                     </ul>
                 </nav>
             </div>
@@ -46,28 +152,6 @@
                         </div>
                         <p th:text="${resena.comentario}"></p>
                     </div>
-                    <!-- Reseña 1 -->
-                    <!--<div class="review">
-                        <h2>Juan Pérez</h2>
-                        <p class="review-date">Octubre 2024</p>
-                        <p>"La mejor experiencia de compra. Paradise Luxury Homes hizo que encontrar mi casa de ensueño en Costa Rica fuera fácil y sin estrés. ¡Recomendado 100%!"</p>
-                    </div>
-                    -->
-                    <!-- Reseña 2 -->
-                    <!--<div class="review">
-                        <h2>María González</h2>
-                        <p class="review-date">Septiembre 2024</p>
-                        <p>"Excelente servicio al cliente. Me guiaron en cada paso del proceso y siempre estuvieron dispuestos a responder mis preguntas. ¡Increíble equipo!"</p>
-                    </div>
-                    -->
-                    <!-- Reseña 3 -->
-                    <!--<div class="review">
-                        <h2>Carlos Rodríguez</h2>
-                        <p class="review-date">Agosto 2024</p>
-                        <p>"El equipo de Paradise Luxury Homes superó mis expectativas. Profesionalismo y conocimiento profundo del mercado inmobiliario de lujo en Costa Rica."</p>
-                    </div>
-                    -->
-                    <!-- Más reseñas pueden añadirse aquí -->
                 </div>
             </section>
         </main>
