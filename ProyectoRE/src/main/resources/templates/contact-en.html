@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/estilos.css">
+        <title>Contact Us</title>
+    </head>
+    <body>
+        <header>
+            <a href="home-en"><img src="logo.png" alt="Paradise Luxury Homes Logo" class="logo"></a>
+            <nav>
+                <ul>
+                    <li><a th:href="@{/index-en}">Home</a></li>
+                    <li><a th:href="@{/luxuryproperties-en}">Luxury Properties</a></li>
+                    <li><a th:href="@{/compare-en}">Compare Properties</a></li>
+                    <li><a th:href="@{/map-en}">Interactive Map</a></li>
+                    <li><a th:href="@{/reviews}">Reviews</a></li> <!-- Nuevo enlace añadido -->
+                    <li><a th:href="@{/contact-en}">Contact</a></li>
+                    <li><a th:href="@{/favorites-en}">Favorites</a></li>
+                    <li class="language-selector"><a href="contact">ES</a> | <a href="contact-en">EN</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="contact-section">
+            <h2>Contact Us</h2>
+            <p>Get in touch for more information on our luxury properties.</p>
+            <form action="#">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" rows="4" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <footer>
+            <p>© 2024 Paradise Luxury Homes - All rights reserved</p>
+        </footer>
+    </body>
+</html>
+

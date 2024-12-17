@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/estilos.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> <!-- Flatpickr CSS -->
+    <title>Agendar una Cita</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; /* Fuente estilizada */
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Texto blanco */
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #000; /* Negro */
+            color: #d4af37; /* Dorado */
+        }
+
+        header .logo {
+            max-height: 80px; /* Tamaño ajustado del logo */
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li {
+            display: inline-block;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #d4af37; /* Dorado */
+            font-weight: bold;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #111; /* Fondo ligeramente más claro que el negro */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.5); /* Sombra dorada */
+            padding: 30px;
+            color: #fff; /* Texto blanco */
+        }
+
+        .form-container h1 {
+            text-align: center;
+            color: #d4af37; /* Dorado */
+            margin-bottom: 30px;
+            font-size: 26px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            color: #d4af37; /* Dorado */
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d4af37; /* Borde dorado */
+            border-radius: 5px;
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Texto blanco */
+            font-size: 14px;
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group input::placeholder {
+            color: #ccc; /* Placeholder gris claro */
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #d4af37; /* Botón dorado */
+            color: #000; /* Texto negro */
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #b89128; /* Dorado más oscuro al pasar el mouse */
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            color: #d4af37;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #000; /* Negro */
+            color: #d4af37; /* Dorado */
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index">
+            <img src="/imagenes/logo.png" alt="Paradise Luxury Homes Logo" class="logo">
+        </a>
+        <nav>
+                <ul>
+                    <li><a th:href="@{/index}">Inicio</a></li>
+                    <li><a th:href="@{/luxuryproperties}">Propiedades de Lujo</a></li>
+                    <li><a th:href="@{/compare}">Comparar Propiedades</a></li>
+                    <li><a th:href="@{/map}">Mapa Interactivo</a></li>
+                    <li><a th:href="@{/reviews}">Reseñas</a></li>
+                    <li><a th:href="@{/contact}">Contacto</a></li>
+                    <li><a th:href="@{/favorites}">Favoritos</a></li>
+                    <li><a th:href="@{/citas-form}">Citas</a></li>
+                    <li><a href="#" id="login-link">Login</a></li> <!-- Pestaña de Login -->
+                    <li class="language-selector"><a href="citas-form">ES</a> | <a href="citas-form">EN</a></li>
+                </ul>
+            </nav>
+    </header>
+
+    <div class="form-container">
+        <h1>Agendar una Cita</h1>
+        <form action="/cita/guardar" method="post">
+            <div class="form-group">
+                <label for="fecha">Fecha de la Cita:</label>
+                <input type="text" id="fecha" name="fecha" class="flatpickr" placeholder="Seleccione una fecha" required>
+            </div>
+            <div class="form-group">
+                <label for="usuario">Usuario:</label>
+                <select id="usuario" name="usuario.id" required>
+                    <option value="">Seleccione un usuario</option>
+                    <option th:each="usuario : ${usuarios}" th:value="${usuario.idUsuario}" th:text="${usuario.nombre}"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="propiedad">Propiedad:</label>
+                <select id="propiedad" name="propiedad.id" required>
+                    <option value="">Seleccione una propiedad</option>
+                    <option th:each="propiedad : ${propiedades}" th:value="${propiedad.idPropiedad}" th:text="${propiedad.nombre}"></option>
+                </select>
+            </div>
+            <button type="submit">Guardar</button>
+        </form>
+        <a href="/citas-listado" class="back-link">Volver al listado</a>
+    </div>
+
+    <footer>
+        <p>© 2024 Paradise Luxury Homes - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> <!-- Flatpickr JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            flatpickr("#fecha", {
+                enableTime: true,
+                dateFormat: "Y-m-d H:i",
+                time_24hr: true
+            });
+        });
+    </script>
+</body>
+</html>

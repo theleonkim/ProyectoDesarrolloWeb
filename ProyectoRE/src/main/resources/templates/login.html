@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inicie sesión en Paradise Luxury Homes.">
+    <title>Login - Paradise Luxury Homes</title>
+    <link href="/css/estilos.css" rel="stylesheet" type="text/css"> <!-- Estilos existentes -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Texto blanco */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            background-color: #111; /* Fondo oscuro */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.5); /* Sombra dorada */
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h1 {
+            color: #d4af37; /* Dorado */
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-container label {
+            text-align: left;
+            color: #d4af37; /* Dorado */
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .login-container input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #d4af37; /* Borde dorado */
+            border-radius: 5px;
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Texto blanco */
+            font-family: inherit; /* Tipografía consistente */
+        }
+
+        .login-container button {
+            padding: 10px;
+            background-color: #d4af37; /* Botón dorado */
+            color: #000; /* Texto negro */
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: inherit; /* Tipografía consistente */
+        }
+
+        .login-container button:hover {
+            background-color: #b89128; /* Dorado más oscuro */
+        }
+
+        .login-container .error-message {
+            color: red;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .login-container .register-link {
+            margin-top: 20px;
+            display: block;
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .login-container .register-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #000;
+            color: #d4af37;
+            border-top: 1px solid #d4af37; /* Línea dorada */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Iniciar Sesión</h1>
+        <form action="/login" method="post">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" placeholder="Ingrese su usuario" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
+
+            <!-- Mostrar mensaje de error -->
+            <div class="error-message" th:if="${error}">
+                <p th:text="${error}"></p>
+            </div>
+
+            <button type="submit">Ingresar</button>
+        </form>
+        <a href="/register" class="register-link">¿No tienes una cuenta? Regístrate aquí</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Paradise Luxury Homes - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>

@@ -29,12 +29,20 @@ public class PropiedadController {
     }
 
     // Mostrar listado de propiedades
-    @GetMapping("/listado")
+    /*@GetMapping("/listado")
     public String listadoPropiedades(Model model) {
         var propiedades = propiedadService.getPropiedades(true); // Obtener propiedades activas
         model.addAttribute("propiedades", propiedades); // Agregar propiedades al modelo
         model.addAttribute("totalPropiedades", propiedades.size()); // Agregar total de propiedades
         return "propiedad/listado"; // Mostrar vista de listado
+    }*/
+    
+    @GetMapping("/luxuryproperties")
+    public String luxuryProperties(Model model) {
+        var propiedades = propiedadService.getPropiedades(true); // Obtener propiedades activas
+        model.addAttribute("propiedades", propiedades); // Agregar propiedades al modelo
+        model.addAttribute("totalPropiedades", propiedades.size()); // Agregar total de propiedades
+        return "luxuryproperties"; // Redirige a luxuryproperties.html
     }
 
     // Detalle de una propiedad específica
