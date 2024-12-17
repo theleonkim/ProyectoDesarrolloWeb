@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de la Propiedad</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header th:insert="fragments/header :: header"></header>
+
+    <!-- Detalles de la Propiedad -->
+    <section class="property-details">
+        <h2 th:text="${propiedad.nombre}">Nombre de la Propiedad</h2>
+        <img th:src="@{${propiedad.urlImgExterior1}}" alt="Imagen Exterior 1">
+        <p><strong>Descripción:</strong> <span th:text="${propiedad.descripcion}"></span></p>
+        <p><strong>Número de Habitaciones:</strong> <span th:text="${propiedad.numHabitaciones}"></span></p>
+        <p><strong>Número de Baños:</strong> <span th:text="${propiedad.numBanos}"></span></p>
+        <p><strong>Precio:</strong> $<span th:text="${propiedad.precio}"></span></p>
+        <p><strong>Metros Cuadrados del Lote:</strong> <span th:text="${propiedad.mtsLote}"></span></p>
+        <p><strong>Metros Cuadrados de Construcción:</strong> <span th:text="${propiedad.mtsConstruccion}"></span></p>
+        <p><strong>Ubicación:</strong> <a th:href="${propiedad.urlUbicacion}" target="_blank">Ver Ubicación</a></p>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Paradise Luxury Homes - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
+

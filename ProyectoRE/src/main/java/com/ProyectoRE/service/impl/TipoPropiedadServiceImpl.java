@@ -18,7 +18,7 @@ public class TipoPropiedadServiceImpl implements TipoPropiedadService {
     public List<TipoPropiedad> getTipoPropiedades(boolean estado) {
         List<TipoPropiedad> lista = tipoPropiedadDao.findAll();
         if (estado) {
-            lista.removeIf(e-> e.isEstado());
+            lista.removeIf(e-> !e.isEstado());
         }
         return lista;
     }
