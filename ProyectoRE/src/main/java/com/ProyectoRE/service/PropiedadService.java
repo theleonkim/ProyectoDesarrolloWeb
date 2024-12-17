@@ -10,4 +10,7 @@ public interface PropiedadService {
     void save(Propiedad propiedad);
 
     Propiedad getPropiedadById(int id); // Método para obtener propiedad por ID
+    
+    //Metodo para borrar una propuedad por el id
+    void delete(Propiedad propiedad);
 }

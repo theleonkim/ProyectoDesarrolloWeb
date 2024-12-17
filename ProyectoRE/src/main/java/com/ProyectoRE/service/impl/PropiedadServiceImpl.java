@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class PropiedadServiceImpl implements PropiedadService {
@@ -29,5 +30,10 @@ public class PropiedadServiceImpl implements PropiedadService {
     @Override
     public Propiedad getPropiedadById(int id) {
         return propiedadDao.findById(id).orElse(null); // Buscar propiedad por ID
+    }
+     @Override
+    @Transactional
+    public void delete(Propiedad propiedad) {
+        propiedadDao.delete(propiedad);
     }
 }
