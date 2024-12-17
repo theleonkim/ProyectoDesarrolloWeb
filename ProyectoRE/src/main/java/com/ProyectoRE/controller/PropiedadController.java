@@ -2,6 +2,8 @@ package com.ProyectoRE.controller;
 
 import com.ProyectoRE.domain.Propiedad;
 import com.ProyectoRE.service.PropiedadService;
+import com.ProyectoRE.service.ServiciosPremiumService;
+import com.ProyectoRE.service.TipoPropiedadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,12 @@ public class PropiedadController {
 
     @Autowired
     private PropiedadService propiedadService;
+    
+    @Autowired
+    private TipoPropiedadService tipoPropiedadService;
+    
+    @Autowired
+    private ServiciosPremiumService serviciosPremiumService;
 
     // Agregar una nueva propiedad
     @PostMapping("/agregar")
@@ -40,7 +48,11 @@ public class PropiedadController {
     @GetMapping("/luxuryproperties")
     public String luxuryProperties(Model model) {
         var propiedades = propiedadService.getPropiedades(true); // Obtener propiedades activas
+        var serviciosPremium = serviciosPremiumService.getServiciosPremium(true);
+        var tiposPropiedades = tipoPropiedadService.getTipoPropiedades(true);
         model.addAttribute("propiedades", propiedades); // Agregar propiedades al modelo
+        model.addAttribute("serviciosPremium", serviciosPremium);
+        model.addAttribute("tiposPropiedades", tiposPropiedades);
         model.addAttribute("totalPropiedades", propiedades.size()); // Agregar total de propiedades
         return "luxuryproperties"; // Redirige a luxuryproperties.html
     }

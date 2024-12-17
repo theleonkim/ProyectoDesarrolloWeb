@@ -64,13 +64,7 @@ public class MainController {
     public String citasListado() {
         return "citas-listado"; // Redirige a citas-listado.html
     }
-  
-    @GetMapping("/luxuryproperties")
-    public String luxuryProperties() {
-        return "luxuryproperties"; // Redirige a citas-listado.html
-    }
-  
-
+    
     @GetMapping("/login")
     public String login() {
         return "login"; // Redirige a login.html
