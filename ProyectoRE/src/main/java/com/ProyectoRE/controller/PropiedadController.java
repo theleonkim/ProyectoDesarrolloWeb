@@ -51,4 +51,12 @@ public class PropiedadController {
         model.addAttribute("propiedad", new Propiedad()); // Crear objeto vacío para formulario
         return "propiedad/formulario"; // Mostrar vista del formulario
     }
+    @GetMapping("/eliminar/{id}")
+    public String eliminarCita(@PathVariable("id") int id) {
+        var cita = propiedadService.findById(id);
+        if (cita != null) {
+            propiedadService.delete(cita);
+        }
+        return "redirect:/propiedad/listado";
+    }
 }
