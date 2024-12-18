@@ -1,6 +1,6 @@
 /*package com.ProyectoRE.service.impl;
 
-import com.ProyectoRE.dao.UsuarioDao;
+import com.ProyectoRE.dao.UsuarioRepository;
 import com.ProyectoRE.domain.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.*;

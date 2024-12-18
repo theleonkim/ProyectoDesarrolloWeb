@@ -23,7 +23,7 @@
                                 <select id="location" name="serviciosPremium" class="form-select">
                                     <option th:each="servicio : ${serviciosPremium}" 
                                             th:value="${servicio.idServicioPremium}" 
-                                            th:text="${servicio.servicioPremium}">Tipo de propiedad</option>
+                                            th:text="${servicio.servicioPremium}">Servicios Premium</option>
                                 </select>
                                 <label for="type">Tipo:</label>
                                 <select id="type" name="tiposPropiedades" class="form-select">
@@ -35,6 +35,10 @@
                             </form>
                         </section>
 
+                        <div>
+
+                        </div>
+
                         <!-- Listado de propiedades -->
                         <section class="property-list">
                             <div th:each="propiedad : ${propiedades}" class="property">
@@ -42,6 +46,12 @@
                                     <h3>[[${propiedad.nombre}]]</h3>
                                     <p>[[${propiedad.descripcion}]]</p>
                                     <a th:href="@{'/propiedad/detalle/' + ${propiedad.idPropiedad}}" class="btn">Ver Detalles</a>
+                            </div>
+                        </section>
+
+                        <section class="form-button">
+                            <div style="text-align: center; margin: 20px 0;">
+                                <a href="/propiedad/formulario" class="btn">Agregar Propiedad</a>
                             </div>
                         </section>
 

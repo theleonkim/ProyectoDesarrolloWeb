@@ -33,7 +33,7 @@ public class PropiedadController {
     @PostMapping("/guardar")
     public String guardarPropiedad(@ModelAttribute Propiedad propiedad) {
         propiedadService.save(propiedad); // Guardar la propiedad
-        return "redirect:/propiedad/listado"; // Redirigir al listado
+        return "luxuryproperties"; // Redirigir al listado
     }
 
     // Mostrar listado de propiedades
@@ -68,9 +68,14 @@ public class PropiedadController {
     // Mostrar formulario para crear o editar una propiedad
     @GetMapping("/formulario")
     public String mostrarFormularioPropiedad(Model model) {
+        var serviciosPremium = serviciosPremiumService.getServiciosPremium(true);
+        var tiposPropiedades = tipoPropiedadService.getTipoPropiedades(true);
         model.addAttribute("propiedad", new Propiedad()); // Crear objeto vacío para formulario
+        model.addAttribute("serviciosPremium", serviciosPremium);
+        model.addAttribute("tiposPropiedades", tiposPropiedades);
         return "propiedad/formulario"; // Mostrar vista del formulario
     }
+    
     @GetMapping("/eliminar/{idPropiedad}")
     public String propiedadEliminar(Propiedad propiedad) {
         propiedadService.delete(propiedad);
