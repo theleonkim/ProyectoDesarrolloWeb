@@ -55,6 +55,7 @@ nav ul li a:hover {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-decoration: none;
 }
 
 .btn:hover {
@@ -196,6 +197,11 @@ nav ul li a:hover {
 }
 
 /* Listado de propiedades */
+.form-button {
+    text-align: center;
+    margin: 40px 0;
+}
+
 .property-list {
     padding: 40px 20px;
     background-color: #fff;

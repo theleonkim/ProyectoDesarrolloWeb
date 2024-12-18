@@ -31,10 +31,15 @@ public class Propiedad implements Serializable {
     private int mtsLote;
     private int mtsConstruccion;
     private boolean ameneties;
+    @Column (name="url_ubicacion")
     private String urlUbicacion;
+    @Column (name="url_img_exterior1")
     private String urlImgExterior1;
+    @Column (name="url_img_exterior2")
     private String urlImgExterior2;
+    @Column (name="url_img_interior1")
     private String urlImgInterior1;
+    @Column (name="url_img_interior2")
     private String urlImgInterior2;
     private boolean estado;
     
@@ -48,17 +53,23 @@ public class Propiedad implements Serializable {
     
     @ManyToOne
    @JoinColumn(name = "id_tipo_propiedad")
-   private TipoPropiedad tipo_propiedad;
+   private TipoPropiedad tipoPropiedad;
 
    @ManyToOne
    @JoinColumn(name = "id_servicio_premium")
-   private ServiciosPremium servicios_premium;
+   private ServiciosPremium serviciosPremium;
 
    
     public Propiedad() {
     }
 
-    public Propiedad(String nombre, String descripcion, int numHabitaciones, int numBanos, int numAreasSociables, float precio, int mtsLote, int mtsConstruccion, boolean ameneties, String urlUbicacion, String urlImgExterior1, String urlImgExterior2, String urlImgInterior1, String urlImgInterior2, boolean estado, List<Cita> cita, List<Favorito> favorito, TipoPropiedad tipo_propiedad, ServiciosPremium servicios_premium) {
+    public Propiedad(String nombre, String descripcion, int numHabitaciones, 
+            int numBanos, int numAreasSociables, float precio, int mtsLote, 
+            int mtsConstruccion, boolean ameneties, String urlUbicacion, 
+            String urlImgExterior1, String urlImgExterior2, String urlImgInterior1, 
+            String urlImgInterior2, boolean estado, List<Cita> cita, List<Favorito> favorito, 
+            TipoPropiedad tipoPropiedad, ServiciosPremium serviciosPremium) 
+    {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.numHabitaciones = numHabitaciones;
@@ -76,8 +87,8 @@ public class Propiedad implements Serializable {
         this.estado = estado;
         this.cita = cita;
         this.favorito = favorito;
-        this.tipo_propiedad = tipo_propiedad;
-        this.servicios_premium = servicios_premium;
+        this.tipoPropiedad = tipoPropiedad;
+        this.serviciosPremium = serviciosPremium;
     }
 
     
