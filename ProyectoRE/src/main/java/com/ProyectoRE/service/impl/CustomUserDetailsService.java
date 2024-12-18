@@ -1,4 +1,4 @@
-package com.ProyectoRE.service.impl;
+/*package com.ProyectoRE.service.impl;
 
 import com.ProyectoRE.dao.UsuarioDao;
 import com.ProyectoRE.domain.Usuario;
@@ -23,4 +23,4 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .roles(usuario.getRoles().stream().map(r -> r.getNombre()).toArray(String[]::new))
                 .build();
     }
-}
+}*/

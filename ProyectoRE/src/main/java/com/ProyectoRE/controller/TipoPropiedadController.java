@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/tipoPropiedad")
 public class TipoPropiedadController {
-
+    
     @Autowired
     private TipoPropiedadService tipoPropiedadService;
 
     @GetMapping("/listado")
     public String inicio(Model model) {
-        var tiposPropiedad = tipoPropiedadService.obtenerTiposActivos(); // Método correcto
+        var tiposPropiedad = tipoPropiedadService.getTipoPropiedades(true);
         model.addAttribute("tiposPropiedad", tiposPropiedad);
         model.addAttribute("totalTipos", tiposPropiedad.size());
         return "/tipoPropiedad/listado";
