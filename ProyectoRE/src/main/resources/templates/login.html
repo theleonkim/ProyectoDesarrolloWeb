@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Inicie sesión en Paradise Luxury Homes.">
     <title>Login - Paradise Luxury Homes</title>
-    <link href="/css/estilos.css" rel="stylesheet" type="text/css"> <!-- Estilos existentes -->
+    <link href="/css/estilos.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <!-- Font Awesome -->
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #000; /* Fondo negro */
-            color: #fff; /* Texto blanco */
+            color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,64 +21,66 @@
         }
 
         .login-container {
-            background-color: #111; /* Fondo oscuro */
+            background-color: #111;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.5); /* Sombra dorada */
+            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.5);
             width: 100%;
             max-width: 400px;
             text-align: center;
         }
 
         .login-container h1 {
-            color: #d4af37; /* Dorado */
+            color: #d4af37;
             margin-bottom: 20px;
             font-size: 24px;
         }
 
-        .login-container form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .login-container label {
-            text-align: left;
-            color: #d4af37; /* Dorado */
-            font-size: 14px;
-            margin-bottom: 8px;
-            font-weight: bold;
+        .form-group {
+            position: relative;
+            margin-bottom: 20px;
         }
 
         .login-container input {
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #d4af37; /* Borde dorado */
+            padding: 10px 10px 10px 35px;
+            width: 100%;
+            border: 1px solid #d4af37;
             border-radius: 5px;
-            background-color: #000; /* Fondo negro */
-            color: #fff; /* Texto blanco */
-            font-family: inherit; /* Tipografía consistente */
+            background-color: #000;
+            color: #fff;
+            font-family: inherit;
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #d4af37;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #d4af37;
         }
 
         .login-container button {
             padding: 10px;
-            background-color: #d4af37; /* Botón dorado */
-            color: #000; /* Texto negro */
+            background-color: #d4af37;
+            color: #000;
             border: none;
             border-radius: 5px;
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s;
-            font-family: inherit; /* Tipografía consistente */
         }
 
         .login-container button:hover {
-            background-color: #b89128; /* Dorado más oscuro */
-        }
-
-        .login-container .error-message {
-            color: red;
-            margin-bottom: 20px;
-            font-size: 14px;
+            background-color: #b89128;
         }
 
         .login-container .register-link {
@@ -100,7 +103,7 @@
             padding: 10px;
             background-color: #000;
             color: #d4af37;
-            border-top: 1px solid #d4af37; /* Línea dorada */
+            border-top: 1px solid #d4af37;
         }
     </style>
 </head>
@@ -108,11 +111,18 @@
     <div class="login-container">
         <h1>Iniciar Sesión</h1>
         <form action="/login" method="post">
-            <label for="username">Usuario:</label>
-            <input type="text" id="username" name="username" placeholder="Ingrese su usuario" required>
+            <div class="form-group">
+                <i class="fa fa-user"></i>
+                <input type="text" id="username" name="username" placeholder="Ingrese su usuario" required autofocus title="Usuario">
+            </div>
 
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
+            <div class="form-group">
+                <i class="fa fa-lock"></i>
+                <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required title="Contraseña">
+                <span class="toggle-password" onclick="togglePasswordVisibility()">
+                    <i class="fa fa-eye" id="toggleIcon"></i>
+                </span>
+            </div>
 
             <!-- Mostrar mensaje de error -->
             <div class="error-message" th:if="${error}">
@@ -127,5 +137,21 @@
     <footer>
         <p>&copy; 2024 Paradise Luxury Homes - Todos los derechos reservados</p>
     </footer>
+
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById("password");
+            const toggleIcon = document.getElementById("toggleIcon");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.classList.remove("fa-eye");
+                toggleIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.classList.remove("fa-eye-slash");
+                toggleIcon.classList.add("fa-eye");
+            }
+        }
+    </script>
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 package com.ProyectoRE.domain;
 
 import jakarta.persistence.*;
@@ -6,27 +5,30 @@ import java.io.Serializable;
 import java.util.List;
 import lombok.Data;
 
-
-
 @Data
 @Entity
-@Table(name="propiedad")
+@Table(name = "propiedad")
 public class Propiedad implements Serializable {
-    
+
     private static final long serialVersionUID = 1L;
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name="id_propiedad")
+    @Column(name = "id_propiedad")
     private int idPropiedad;
+
     private String nombre;
     private String descripcion;
-    @Column (name="n_habitaciones")
+
+    @Column(name = "n_habitaciones")
     private int numHabitaciones;
-    @Column (name="n_banos")
+
+    @Column(name = "n_banos")
     private int numBanos;
-    @Column (name="n_areas_sociables")
+
+    @Column(name = "n_areas_sociables")
     private int numAreasSociables;
+
     private float precio;
     private int mtsLote;
     private int mtsConstruccion;
@@ -40,17 +42,35 @@ public class Propiedad implements Serializable {
     @Column (name="url_img_interior1")
     private String urlImgInterior1;
     @Column (name="url_img_interior2")
+
+    @Column(name = "url_ubicacion") // Asumiendo que en la base de datos tiene este nombre
+    private String urlUbicacion;
+
+    @Column(name = "url_img_exterior1") // Asumiendo que en la base de datos tiene este nombre
+    private String urlImgExterior1;
+
+    @Column(name = "url_img_exterior2")
+    private String urlImgExterior2;
+
+    @Column(name = "url_img_interior1")
+    private String urlImgInterior1;
+
+    @Column(name = "url_img_interior2")
     private String urlImgInterior2;
+
     private boolean estado;
-    
+
+    // Relación con Cita
     @OneToMany
     @JoinColumn(name = "id_propiedad", insertable = false, updatable = false)
-    List<Cita> cita;
-    
+    private List<Cita> cita;
+
+    // Relación con Favorito
     @OneToMany
     @JoinColumn(name = "id_propiedad", insertable = false, updatable = false)
-    List<Favorito> favorito;
-    
+    private List<Favorito> favorito;
+
+    // Relación con TipoPropiedad
     @ManyToOne
    @JoinColumn(name = "id_tipo_propiedad")
    private TipoPropiedad tipoPropiedad;
@@ -59,9 +79,8 @@ public class Propiedad implements Serializable {
    @JoinColumn(name = "id_servicio_premium")
    private ServiciosPremium serviciosPremium;
 
-   
-    public Propiedad() {
-    }
+    // Constructor vacío
+    public Propiedad() {}
 
     public Propiedad(String nombre, String descripcion, int numHabitaciones, 
             int numBanos, int numAreasSociables, float precio, int mtsLote, 
@@ -90,8 +109,4 @@ public class Propiedad implements Serializable {
         this.tipoPropiedad = tipoPropiedad;
         this.serviciosPremium = serviciosPremium;
     }
-
-    
-   
-    
 }
