@@ -42,20 +42,6 @@ public class Propiedad implements Serializable {
     @Column (name="url_img_interior1")
     private String urlImgInterior1;
     @Column (name="url_img_interior2")
-
-    @Column(name = "url_ubicacion") // Asumiendo que en la base de datos tiene este nombre
-    private String urlUbicacion;
-
-    @Column(name = "url_img_exterior1") // Asumiendo que en la base de datos tiene este nombre
-    private String urlImgExterior1;
-
-    @Column(name = "url_img_exterior2")
-    private String urlImgExterior2;
-
-    @Column(name = "url_img_interior1")
-    private String urlImgInterior1;
-
-    @Column(name = "url_img_interior2")
     private String urlImgInterior2;
 
     private boolean estado;
